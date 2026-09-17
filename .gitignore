@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.DS_Store
+.env
+.env.local
+data/*.sqlite
+data/*.sqlite-shm
+data/*.sqlite-wal
+*.log
+*.tsbuildinfo

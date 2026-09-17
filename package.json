@@ -1,0 +1,23 @@
+{
+  "name": "tsp-ope",
+  "version": "0.1.0",
+  "private": true,
+  "description": "车联网运营管理平台本地开发工程",
+  "workspaces": [
+    "apps/api",
+    "apps/web"
+  ],
+  "scripts": {
+    "dev": "concurrently -n api,web -c blue,green \"npm run dev -w apps/api\" \"npm run dev -w apps/web\"",
+    "build": "npm run build --workspaces",
+    "check": "npm run typecheck --workspaces && npm run db:init -w apps/api",
+    "db:init": "npm run db:init -w apps/api"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "typescript": "^5.9.2"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  }
+}
